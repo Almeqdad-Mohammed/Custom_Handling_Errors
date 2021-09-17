@@ -71,8 +71,13 @@ private $success_message;
    // if info of connection is valid will get successful connection by this code
    #   echo $conn
    //  else will put empty array on the screen
-    echo "<pre>";
-     print_r($conn->getExecptions());  //  why using p----***-- rint_r because it's an array consertion not vars string
-    echo "</pre>";
+// if condition  if the database connectet of not 
+    if ($conn->success_message == true) { //  if conn then throw this message 
+      echo "connection successfuly";
+    }else {  // else throw this message 
+      echo "<pre>";
+       print_r($conn->getExecptions()); //  why using p----***-- rint_r because it's an array consertion not vars string
+      echo "</pre>";
+    }
 
  ?>
